@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.hero-section .lead {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.search-box input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-box button {
+    padding: 12px 30px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #2980b9;
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.features-section h2 {
+    color: #2c3e50;
+    margin-bottom: 50px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    background-color: #fff;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #7f8c8d;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+.footer h4 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 50px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .feature-card {
+        margin-bottom: 30px;
+    }
+} 
