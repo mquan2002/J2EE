@@ -16,7 +16,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/css/**", "/js/**", "/images/**").permitAll() // Cho phép truy cập tự do vào trang chủ và các tài nguyên tĩnh
+                .antMatchers("/","/about","/contact", "/css/**", "/js/**", "/images/**").permitAll() // Cho phép truy cập tự do vào trang chủ và các tài nguyên tĩnh
                 .anyRequest().authenticated()
             .and()
             .csrf().disable(); // Tắt CSRF để dễ dàng test

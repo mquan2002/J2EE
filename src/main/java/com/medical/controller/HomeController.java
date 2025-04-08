@@ -13,14 +13,14 @@ public class HomeController {
         model.addAttribute("contentPage", "home"); // Chỉ định home.html
         return "index"; // Trả về index.htm
     }
-    
+
     @GetMapping("/login")
     public String login() {
         return "login";
     }
-    
+
     @GetMapping("/register")
     public String register() {
         return "register";
     }
-} 
+}
