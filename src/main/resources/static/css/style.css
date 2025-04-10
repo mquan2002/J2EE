@@ -172,9 +172,9 @@ body {
     margin: 0 auto 1.5rem;
 }
 
-.icon-circle img {
-    width: 40px;
-    height: 40px;
+.icon-circle i {
+    font-size: 28px;
+    color: #3182ce;
 }
 
 .feature-card h3 {
@@ -204,7 +204,7 @@ body {
 
 .footer .row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 

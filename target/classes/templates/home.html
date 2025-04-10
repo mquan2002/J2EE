@@ -1,5 +1,7 @@
 <html>
 <th:block th:fragment="content">
+    <!-- Slider -->
+    <div th:replace="~{slider :: slider}"></div>
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="hero-content">
@@ -21,21 +23,21 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="icon-circle">
-                        <img th:src="@{/images/doctor-icon.svg}" alt="Doctor">
+                        <i class="fa-solid fa-user-doctor"></i>
                     </div>
                     <h3>Bác sĩ chuyên môn cao</h3>
                     <p>Đội ngũ bác sĩ giàu kinh nghiệm, được đào tạo chuyên sâu</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-circle">
-                        <img th:src="@{/images/calendar-icon.svg}" alt="Calendar">
+                        <i class="fa-regular fa-calendar"></i>
                     </div>
                     <h3>Đặt lịch dễ dàng</h3>
                     <p>Đặt lịch nhanh chóng, theo dõi lịch hẹn trực tuyến</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-circle">
-                        <img th:src="@{/images/star-icon.svg}" alt="Star">
+                        <i class="fa-solid fa-star"></i>
                     </div>
                     <h3>Dịch vụ chất lượng</h3>
                     <p>Cam kết chất lượng dịch vụ, chăm sóc tận tâm</p>
