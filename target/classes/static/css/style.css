@@ -305,4 +305,67 @@ body {
     .feature-card {
         margin-bottom: 1rem;
     }
-} 
+}
+
+.fsearch .row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.btn-fsearch{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    align-content: center;
+    background-color: rgba(0, 9, 80, 0.93);
+    border-radius: 2rem;
+    width: 14rem;
+    height: 4rem;
+    transition: 0.4s;
+}
+.btn-fsearch:hover{
+    background-color: white;
+}
+.doctor .card{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    height: 34rem;
+    border-radius: 1rem ;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.doctor .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.card-img-top {
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+}
+.card-title {
+    font-weight: 700;
+    color: #003366;
+}
+.card-text {
+    font-size: 0.95rem;
+}
+
+.specialty .card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    height: 32rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.specialty .card:hover {
+    transform: translateY(-3px);
+}
+
+.specialty .card-img-top {
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+}
+.specialty  {
+    min-width: 80%;
+}
