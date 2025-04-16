@@ -15,8 +15,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeRequests()
-                .antMatchers("/",
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/",
                         "/about",
                         "/contact",
                         "/booking",
@@ -26,8 +26,8 @@ public class SecurityConfig {
                         "/js/**",
                         "/images/**").permitAll() // Cho phép truy cập tự do vào trang chủ và các tài nguyên tĩnh
                 .anyRequest().authenticated()
-            .and()
-            .csrf().disable(); // Tắt CSRF để dễ dàng test
+                )
+                .csrf(csrf -> csrf.disable()); // Tắt CSRF để dễ dàng test
         return http.build();
     }
 

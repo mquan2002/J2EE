@@ -10,35 +10,12 @@
     <div class="container">
         <div class="specialty p-5">
             <div class="row g-5">
-                <!-- Card 1 -->
-                <div class="col-md-4 ">
+                <div class="col-md-4 " th:each="spe : ${specialties}">
                     <div class="card  ">
-                        <img src="/images/nhatminh.png" class="card-img-top" alt="Bác sĩ 1">
+                        <img th:src="@{'/images/specialty/'+ ${spe.image}}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">BS. Park Ki Cho</h5>
-                            <p class="card-text">Bác sĩ Nội tổng quát, tận tâm và chu đáo, luôn mang đến sự yên tâm cho bệnh nhân.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4 ">
-                    <div class="card ">
-                        <img src="/images/nhatminh2.jpg" class="card-img-top" alt="Bác sĩ 2">
-                        <div class="card-body">
-                            <h5 class="card-title">BS. Cho Bi Dan</h5>
-                            <p class="card-text">Bác sĩ Nội tổng quát, tận tâm và chu đáo, luôn mang đến sự yên tâm cho bệnh nhân.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4 ">
-                    <div class="card ">
-                        <img src="/images/nhatminh3.jpg" class="card-img-top" alt="Bác sĩ 3">
-                        <div class="card-body">
-                            <h5 class="card-title">BS. Nam Ki Cho</h5>
-                            <p class="card-text">Bác sĩ Nội tổng quát, tận tâm và chu đáo, luôn mang đến sự yên tâm cho bệnh nhân.</p>
+                            <h5 class="card-title" th:text="'Chuyên khoa: ' + ${spe.name}"></h5>
+                            <p class="card-text description" th:text="${spe.description}"></p>
                         </div>
                     </div>
                 </div>

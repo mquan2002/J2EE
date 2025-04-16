@@ -369,3 +369,11 @@ body {
 .specialty  {
     min-width: 80%;
 }
+.specialty .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 6em; /* Chiều cao tùy chỉnh dựa trên kích thước font */
+}
