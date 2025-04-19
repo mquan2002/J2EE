@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chọn loại đăng ký</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="text-center mb-0">Chọn loại tài khoản</h2>
+                    </div>
+                    <div class="card-body p-5">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-user-md text-primary mb-4" style="font-size: 4rem;"></i>
+                                        <h3 class="card-title">Bác sĩ</h3>
+                                        <p class="card-text">Đăng ký tài khoản bác sĩ để quản lý lịch hẹn và thông tin cá nhân.</p>
+                                        <a th:href="@{/register/doctor}" class="btn btn-primary btn-lg mt-3">
+                                            <i class="fas fa-user-plus me-2"></i>Đăng ký
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-user text-success mb-4" style="font-size: 4rem;"></i>
+                                        <h3 class="card-title">Bệnh nhân</h3>
+                                        <p class="card-text">Đăng ký tài khoản bệnh nhân để đặt lịch khám và theo dõi sức khỏe.</p>
+                                        <a th:href="@{/register/patient}" class="btn btn-success btn-lg mt-3">
+                                            <i class="fas fa-user-plus me-2"></i>Đăng ký
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <p>Đã có tài khoản? <a th:href="@{/login}" class="text-primary">Đăng nhập</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

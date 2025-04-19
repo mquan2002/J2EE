@@ -8,13 +8,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
-@Table(name = "doctors")
-public class Doctor implements UserDetails {
+@Table(name = "patients")
+public class Patient implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,11 +25,11 @@ public class Doctor implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String fullName;
-
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
+    private String fullName;
 
     private String phoneNumber;
     private String address;
@@ -39,22 +39,19 @@ public class Doctor implements UserDetails {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
 
-    @ManyToOne
-    @JoinColumn(name = "specialty_id")
-    private Specialty specialty;
-
-    private String experience;
-    private String education;
-    private String description;
+    private String gender;
+    private String bloodGroup;
+    private String medicalHistory;
+    private String allergies;
 
     @Column(nullable = false)
-    private boolean isAvailable = true;
+    private boolean isActive = true;
 
-    private final String role = "ROLE_DOCTOR";
+    private final String role = "ROLE_PATIENT";
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role));
+        return Collections.singletonList(new SimpleGrantedAuthority(role));
     }
 
     @Override
@@ -76,4 +73,4 @@ public class Doctor implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-}
+} 

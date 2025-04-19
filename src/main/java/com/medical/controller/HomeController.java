@@ -10,17 +10,7 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("pageTitle", "Trang chủ - Đặt lịch khám");
-        model.addAttribute("contentPage", "home"); // Chỉ định home.html
-        return "index"; // Trả về index.htm
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
-    @GetMapping("/register")
-    public String register() {
-        return "register";
+        model.addAttribute("contentPage", "home");
+        return "index";
     }
 }
