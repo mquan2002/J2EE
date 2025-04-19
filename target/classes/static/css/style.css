@@ -377,3 +377,46 @@ body {
     text-overflow: ellipsis;
     max-height: 6em; /* Chiều cao tùy chỉnh dựa trên kích thước font */
 }
+
+.book-form{
+    box-shadow: 10px 10px 10px 10px gray;
+    border: 1px solid;
+    padding: 4.5rem;
+    border-radius: 1rem;
+}
+
+.book-form button:hover{
+    background-color: rgba(0, 9, 80, 0.93);
+    color: white;
+}
+
+.book-form input{
+    font-size: 20px;
+    height: 3rem;
+    width: 21rem;
+    border: #666666 0.5px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.book-form select{
+    font-size: 20px;
+    height: 3rem;
+    border: #666666 0.5px solid;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.book-form button{
+    margin-top: 1.5rem;
+}
+
+/*.input-date::-webkit-datetime-edit-text,*/
+/*.input-date::-webkit-datetime-edit-month-field,*/
+/*.input-date::-webkit-datetime-edit-day-field,*/
+/*.input-date::-webkit-datetime-edit-year-field {*/
+/*    display: none;*/
+/*}*/
+
+
