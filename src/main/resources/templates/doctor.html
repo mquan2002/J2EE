@@ -1,5 +1,3 @@
-<!doctype html>
-<html>
 <th:block th:fragment="content">
     <div class="hero-section">
         <div class="container hero-content">
@@ -12,9 +10,9 @@
             <!-- Card 1 -->
             <div class="col-md-4 doctor" th:each="doc : ${doctors}">
                 <div class="card">
-                    <img th:src="@{'/images/doctor/'+  ${doc.image}}" class="card-img-top" alt="Bác sĩ 1" >
+                    <img th:src="@{'src/main/resources/static/uploads/doctor/'+${doc.image}}" class="card-img-top" alt="Bác sĩ 1" >
                     <div class="card-body">
-                        <h5 class="card-title" th:text="${doc.name}"></h5>
+                        <h5 class="card-title" th:text="${doc.fullName}"></h5>
                         <p class="card-text" th:text="'Chuyên khoa: ' + ${doc.specialty.name}"></p>
                     </div>
                 </div>
@@ -22,4 +20,3 @@
         </div>
     </div>
 </th:block>
-</html>

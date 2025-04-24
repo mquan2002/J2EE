@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<th:block th:fragment="content">
+    <div class="hero-section">
+        <div class="container hero-content">
+            <h1>Chuyên Khoa</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="specialty p-5">
+            <div class="row g-5">
+                <div class="col-md-4 " th:each="spe : ${specialties}">
+                    <div class="card  ">
+                        <img th:src="@{'/uploads/specialty/'+ ${spe.image}}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="'Chuyên khoa: ' + ${spe.name}"></h5>
+                            <p class="card-text description" th:text="${spe.description}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

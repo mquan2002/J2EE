@@ -22,6 +22,10 @@ public class Appointment {
     @JoinColumn(name = "doctor_id", nullable = false)
     private Doctor doctor;
 
+    @ManyToOne
+    @JoinColumn(name = "specialty_id", nullable = false)
+    private Specialty specialty;
+
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime appointmentTime;

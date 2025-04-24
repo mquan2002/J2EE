@@ -10,8 +10,8 @@ public class SpecialtyService {
     @Autowired
     private SpecialtyRepository specialtyRepository;
 
-    public Specialty findByName(String name) {
-        return specialtyRepository.findByName(name)
+    public Specialty findById(Long id) {
+        return specialtyRepository.findById(id)
                 .orElse(null);
     }
 

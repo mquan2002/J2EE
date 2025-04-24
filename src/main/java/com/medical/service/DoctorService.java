@@ -1,6 +1,7 @@
 package com.medical.service;
 
 import com.medical.model.Doctor;
+import com.medical.model.Specialty;
 import com.medical.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +21,11 @@ public class DoctorService implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    public Doctor findById(Long id) {
+        return doctorRepository.findById(id)
+                .orElse(null);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

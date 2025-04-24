@@ -52,10 +52,10 @@ public class SecurityConfig {
             .authenticationProvider(doctorAuthProvider)
             .authenticationProvider(patientAuthProvider)
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/home", "/about", "/contact", "/search/**").permitAll()
+                .requestMatchers("/", "/home", "/about", "/contact", "/specialty","/doctor","/booking", "/search/**").permitAll()
                 .requestMatchers("/css/**", "/js/**", "/img/**", "/images/**", "/webjars/**").permitAll()
                 .requestMatchers("/register/**", "/login", "/error").permitAll()
-                .requestMatchers("/doctor/**").hasRole("DOCTOR")
+//                .requestMatchers("/doctor/**").hasRole("DOCTOR")
                 .requestMatchers("/patient/**").hasRole("PATIENT")
                 .anyRequest().authenticated()
             )

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!-- Navbar -->
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <i class="fas fa-hospital-user text-primary me-2"></i>
+            <span class="fw-bold text-primary">Medical Appointment</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="fas fa-home me-1"></i>Trang chủ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        <i class="fas fa-info-circle me-1"></i>Giới thiệu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">
+                        <i class="fas fa-envelope me-1"></i>Liên hệ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">
+                        <i class="fas fa-search me-1"></i>Tìm bác sĩ
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Menu phải -->
+            <ul class="navbar-nav ms-auto">
+                <!-- Chưa đăng nhập -->
+                <div sec:authorize="!isAuthenticated()" class="d-flex">
+                    <li class="nav-item me-2">
+                        <a class="btn btn-outline-primary" href="/login">
+                            <i class="fas fa-sign-in-alt me-1"></i>Đăng nhập
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="/register">
+                            <i class="fas fa-user-plus me-1"></i>Đăng ký
+                        </a>
+                    </li>
+                </div>
+                
+                <!-- Đã đăng nhập -->
+                <div sec:authorize="isAuthenticated()">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" 
+                           id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-2" 
+                                 th:src="${#authentication.principal.image != null ? #authentication.principal.image : '/img/default-avatar.png'}" 
+                                 alt="avatar" style="width: 32px; height: 32px; object-fit: cover;">
+                            <span sec:authentication="name"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="fas fa-user me-2"></i>Hồ sơ
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/appointments">
+                                    <i class="fas fa-calendar-alt me-2"></i>Lịch hẹn
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form th:action="@{/logout}" method="post">
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

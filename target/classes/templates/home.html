@@ -1,0 +1,54 @@
+<html>
+<th:block th:fragment="content">
+    <!-- Slider -->
+    <div th:replace="~{slider :: slider}"></div>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="fsearch hero-content">
+            <h1>Đặt lịch khám bệnh online dễ dàng</h1>
+            <p>Tìm bác sĩ phù hợp và đặt lịch khám ngay hôm nay</p>
+            <div class="row">
+                <div class="col">
+                    <a href="doctor" class="  btn btn-fsearch">Bác sĩ</a>
+                </div>
+                <div class="col">
+                    <a href="specialty" class="  btn btn-fsearch">Chuyên Khoa</a>
+                </div>
+                <div class="col">
+                    <a href="booking" class="  btn btn-fsearch">Đặt Lịch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Section -->
+    <div class="features-section">
+        <div class="container">
+            <h2>Tại sao chọn chúng tôi?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3>Bác sĩ chuyên môn cao</h3>
+                    <p>Đội ngũ bác sĩ giàu kinh nghiệm, được đào tạo chuyên sâu</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-circle">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                    <h3>Đặt lịch dễ dàng</h3>
+                    <p>Đặt lịch nhanh chóng, theo dõi lịch hẹn trực tuyến</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Dịch vụ chất lượng</h3>
+                    <p>Cam kết chất lượng dịch vụ, chăm sóc tận tâm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+</html>
