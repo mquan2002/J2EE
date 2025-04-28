@@ -34,10 +34,6 @@
 <!--                </div>-->
 <!--            </div>-->
             <div class="row">
-                <label for="appointmentDateTime">Appointment Date & Time:</label>
-                <input type="datetime-local" id="appointmentDateTime" th:field="*{appointmentTime}" required/>
-            </div>
-            <div class="row">
                 <div class="col">
                     <select name="specialtyId" class="form-select" id="specialty">
                         <option value="">-- Chọn chuyên khoa --</option>
@@ -57,10 +53,12 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <input placeholder="Tình trạng" th:field="*{description}" >
-                </div>
+            <div class="row wrap-inp">
+                <label>Chọn ngày và giờ khám</label>
+                <input  type="datetime-local" id="appointmentDateTime" th:field="*{appointmentTime}" required/>
+            </div>
+            <div class="row wrap-inp">
+                <input placeholder="Tình trạng" th:field="*{description}" >
             </div>
             <button type="submit" class="btn btn-fsearch">Gửi</button>
         </form>

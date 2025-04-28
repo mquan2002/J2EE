@@ -390,11 +390,10 @@ body {
 .book-form input{
     font-size: 20px;
     height: 3rem;
-    width: 24.5rem;
+    width: 100%;
     border: #666666 0.5px solid;
     border-radius: 10px;
     padding: 1rem;
-    margin-top: 1.5rem;
 }
 
 .book-form select{
@@ -408,6 +407,16 @@ body {
 .book-form button{
     margin-top: 1.5rem;
 }
+
+.wrap-inp {
+    padding: 1rem 0.8rem;
+}
+
+.wrap-inp label{
+    text-align: left;
+    color: #666666;
+}
+
 
 .container {
     max-width: 1200px;
