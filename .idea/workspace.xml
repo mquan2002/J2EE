@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eba04eec-0f9a-4cae-b3f0-4c8472e131e6" name="Default Changelist" comment="Add đăng ký, đăng nhập, chỉnh sửa layout">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/medical/controller/Doctor_ManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/doctor/doctor_dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/doctor/doctor_manager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/doctor/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/medical/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/medical/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/doctor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/medical/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/medical/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/booking.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -129,6 +129,8 @@
       <workItem from="1745484023862" duration="18000" />
       <workItem from="1745484068867" duration="157000" />
       <workItem from="1745818976172" duration="4973000" />
+      <workItem from="1745828435277" duration="216000" />
+      <workItem from="1746157950786" duration="7508000" />
     </task>
     <task id="LOCAL-00001" summary="Add đăng ký, đăng nhập, chỉnh sửa layout">
       <created>1744952992476</created>
