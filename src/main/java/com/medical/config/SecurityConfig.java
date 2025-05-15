@@ -56,7 +56,7 @@ public class SecurityConfig {
                 .requestMatchers("/css/**", "/js/**", "/img/**", "/images/**", "/uploads/**", "/webjars/**").permitAll()
                 .requestMatchers("/register/**", "/login", "/error").permitAll()
                 .requestMatchers("/doctor_manager/**","/profile/","/doctor_dashboard/").hasRole("DOCTOR")
-                .requestMatchers("/patient/**","/booking/**","/booking_success/**").hasRole("PATIENT")
+                .requestMatchers("/patient/**","/booking/**","/booking_success/**","/patient_profile/**").hasRole("PATIENT")
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
