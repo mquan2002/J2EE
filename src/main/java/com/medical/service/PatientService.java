@@ -1,6 +1,7 @@
 package com.medical.service;
 
 import com.medical.model.Patient;
+import com.medical.model.Specialty;
 import com.medical.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

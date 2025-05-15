@@ -376,6 +376,48 @@ body {
     max-height: 6em; /* Chiều cao tùy chỉnh dựa trên kích thước font */
 }
 
+
+.book-form{
+    box-shadow: 10px 10px 10px 10px gray;
+    border-radius: 1rem;
+}
+
+.book-form button:hover{
+    background-color: rgba(0, 9, 80, 0.93);
+    color: white;
+}
+
+.book-form input{
+    font-size: 20px;
+    height: 3rem;
+    width: 100%;
+    border: #666666 0.5px solid;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.book-form select{
+    font-size: 20px;
+    height: 3rem;
+    border: #666666 0.5px solid;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.book-form button{
+    margin-top: 1.5rem;
+}
+
+.wrap-inp {
+    padding: 1rem 0.8rem;
+}
+
+.wrap-inp label{
+    text-align: left;
+    color: #666666;
+}
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -591,3 +633,5 @@ a:hover {
     font-size: 1.2rem;
     color: #0066cc;
 }
+
+

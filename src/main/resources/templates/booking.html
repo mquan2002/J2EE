@@ -1,6 +1,67 @@
 <!doctype html>
 <html>
 <th:block th:fragment="content">
-
+    <div class="container w-50 p-5" style="margin-top: 7.5rem"  >
+        <form class="book-form container text-center" th:action="@{/booking/create}" th:object="${appointment}"  method="post">
+                <h1>Đăng ký khám bệnh</h1>
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <input th:field="*{}" placeholder="Họ và tên">-->
+<!--                </div>-->
+<!--                <div class="col">-->
+<!--                    <input class="input-date" type="date">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <input placeholder="Điện thoại">-->
+<!--                </div>-->
+<!--                <div class="col">-->
+<!--                    <input type="email" placeholder="Email">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <input placeholder="Tình trạng" th:field="*{description}">-->
+<!--                </div>-->
+<!--                <div class="col">-->
+<!--                    <select class="form-select" aria-label="Sex" th:field="*{description}">-->
+<!--                        <option selected>Giới tính</option>-->
+<!--                        <option value="Nam">Nam</option>-->
+<!--                        <option value="Nữ">Nữ</option>-->
+<!--                        <option value="Khác">Khác</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="row">
+                <div class="col">
+                    <select name="specialtyId" class="form-select" id="specialty">
+                        <option value="">-- Chọn chuyên khoa --</option>
+                        <option th:each="spec : ${specialties}"
+                                th:value="${spec.id}"
+                                th:text="${spec.name}">
+                        </option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-select" name="doctorId" id="doctor" >
+                        <option value="">-- Chọn bác sĩ --</option>
+                        <option th:each="doc : ${doctors}"
+                                th:value="${doc.id}"
+                                th:text="${doc.fullName}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row wrap-inp">
+                <label>Chọn ngày và giờ khám</label>
+                <input  type="datetime-local" id="appointmentDateTime" th:field="*{appointmentTime}" required/>
+            </div>
+            <div class="row wrap-inp">
+                <textarea placeholder="Tình trạng" class="rounded-3" style="height: 8rem" th:field="*{description}" ></textarea>
+            </div>
+            <button type="submit" class="btn btn-fsearch">Gửi</button>
+        </form>
+    </div>
 </th:block>
 </html>

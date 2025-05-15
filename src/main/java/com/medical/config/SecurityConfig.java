@@ -52,16 +52,24 @@ public class SecurityConfig {
             .authenticationProvider(doctorAuthProvider)
             .authenticationProvider(patientAuthProvider)
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/home", "/about", "/contact", "/search/**").permitAll()
-                .requestMatchers("/css/**", "/js/**", "/img/**", "/images/**", "/webjars/**").permitAll()
+                .requestMatchers("/", "/home", "/about", "/contact", "/specialty","/doctor","/search/**").permitAll()
+                .requestMatchers("/css/**", "/js/**", "/img/**", "/images/**", "/uploads/**", "/webjars/**").permitAll()
                 .requestMatchers("/register/**", "/login", "/error").permitAll()
-                .requestMatchers("/doctor/**").hasRole("DOCTOR")
-                .requestMatchers("/patient/**").hasRole("PATIENT")
+                .requestMatchers("/doctor_manager/**","/profile/","/doctor_dashboard/").hasRole("DOCTOR")
+                .requestMatchers("/patient/**","/booking/**","/booking_success/**").hasRole("PATIENT")
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
                 .loginPage("/login")
                 .defaultSuccessUrl("/", true)
+                .successHandler((request, response, authentication) -> {  // Thêm success handler tùy chỉnh
+                    if (authentication.getAuthorities().stream()
+                            .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_DOCTOR"))) {
+                        response.sendRedirect("/doctor_dashboard");
+                    } else {
+                        response.sendRedirect("/");
+                    }
+                })
                 .permitAll()
             )
             .logout(logout -> logout

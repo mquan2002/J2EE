@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <div th:if="${error}" class="alert alert-danger" th:text="${error}">
                         </div>
-                        <form th:action="@{/register/doctor}" method="post" th:object="${doctor}" class="needs-validation" novalidate>
+                        <form th:action="@{/register/doctor}" method="post" enctype="multipart/form-data" th:object="${doctor}" class="needs-validation" novalidate>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="username" class="form-label">Tên đăng nhập:</label>
@@ -56,20 +56,28 @@
                                     <div class="invalid-feedback">Vui lòng chọn ngày sinh</div>
                                 </div>
                             </div>
-                            
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Địa chỉ:</label>
-                                <input type="text" class="form-control" id="address" th:field="*{address}" required>
-                                <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="address" class="form-label">Địa chỉ:</label>
+                                    <input type="text" class="form-control" id="address" th:field="*{address}" required>
+                                    <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="image" class="form-label">Hình ảnh:</label>
+                                    <input type="file" class="form-control" id="image" name="imageFile" accept="image/*">
+                                    <div class="invalid-feedback">Vui lòng chọn hình ảnh</div>
+                                </div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="specialty" class="form-label">Chuyên khoa:</label>
-                                <select class="form-select" id="specialty" name="specialty.name" required>
-                                    <option value="">Chọn chuyên khoa</option>
-                                    <option th:each="specialty : ${specialties}" 
-                                            th:value="${specialty}" 
-                                            th:text="${specialty}">Chuyên khoa</option>
+                                <select name="specialtyId" id="specialty" class="form-select">
+                                    <option value="">-- Chọn chuyên khoa --</option>
+                                    <option th:each="spec : ${specialties}"
+                                            th:value="${spec.id}"
+                                            th:text="${spec.name}">
+                                    </option>
                                 </select>
                                 <div class="invalid-feedback">Vui lòng chọn chuyên khoa</div>
                             </div>
