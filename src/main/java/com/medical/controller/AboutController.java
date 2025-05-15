@@ -12,7 +12,7 @@ public class AboutController {
         model.addAttribute("contentPage", "about"); // Chỉ định about.html
         return "index"; // Trả về index.htm
     }
-    @GetMapping("/contact")
+    @GetMapping("/about/contact")
     public String contact(Model model) {
         model.addAttribute("pageTitle", "Liên hệ");
         model.addAttribute("contentPage", "contact"); // Chỉ định about.html
