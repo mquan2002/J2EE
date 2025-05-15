@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eba04eec-0f9a-4cae-b3f0-4c8472e131e6" name="Default Changelist" comment="Add đăng ký, đăng nhập, chỉnh sửa layout">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/medical/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/medical/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/medical/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/medical/controller/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/medical/controller/Doctor_ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/medical/controller/Doctor_ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/medical/service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/medical/service/DoctorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/booking_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/booking_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/doctor/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/doctor/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/medical/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/medical/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/medical/controller/BookingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/medical/controller/BookingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/medical/service/SpecialtyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/medical/service/SpecialtyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/booking_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/booking_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +44,7 @@
     &quot;Spring Boot.HomeDoctorApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;TuBui&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Documents/Code TB/J2EEbk/J2EE&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/TuanMan/Documents/Coding/backup/J2EE&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,7 +60,14 @@
       <recent name="C:\Users\Admin\Documents\Code TB\J2EE\J2EE\src\main\resources\static\uploads\doctor" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.HomeDoctorApplication">
+  <component name="RunManager" selected="Application.HomeDoctorApplication">
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="home-doctor" />
+      <option name="SPRING_BOOT_MAIN_CLASS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HomeDoctorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.medical.HomeDoctorApplication" />
       <module name="home-doctor" />
@@ -96,26 +89,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="home-doctor" />
-      <option name="SPRING_BOOT_MAIN_CLASS" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HomeDoctorApplication" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
