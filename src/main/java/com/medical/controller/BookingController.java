@@ -109,11 +109,18 @@ public class BookingController {
             appointmentService.addAppointment(appointment);
             appointment.setPatient(patient);
             redirectAttributes.addFlashAttribute("success", "Đăng ký lịch khám thành công!");
-            return "redirect:/booking-success"; // Redirect sau khi đặt lịch thành công
+            return "redirect:/booking_success"; // Redirect sau khi đặt lịch thành công
             } catch (Exception e) {
                 redirectAttributes.addFlashAttribute("error", "Đăng ký thất bại: " + e.getMessage());
                 return "redirect:/booking";
             }
+    }
+
+    @GetMapping("/booking_success")
+    public String booking_success(Model model) {
+        model.addAttribute("pageTitle", "Đăng ký thành công");
+        model.addAttribute("contentPage", "booking_success");
+        return "index"; // Trả về index.htm
     }
 }
 

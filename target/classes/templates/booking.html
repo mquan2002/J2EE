@@ -58,7 +58,7 @@
                 <input  type="datetime-local" id="appointmentDateTime" th:field="*{appointmentTime}" required/>
             </div>
             <div class="row wrap-inp">
-                <input placeholder="Tình trạng" th:field="*{description}" >
+                <textarea placeholder="Tình trạng" class="rounded-3" style="height: 8rem" th:field="*{description}" ></textarea>
             </div>
             <button type="submit" class="btn btn-fsearch">Gửi</button>
         </form>

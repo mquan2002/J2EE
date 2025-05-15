@@ -46,18 +46,27 @@ public class DoctorService implements UserDetailsService {
         return doctorRepository.save(doctor);
     }
 
-    public List<String> getAllSpecialties() {
-        return Arrays.asList(
-            "Nội khoa",
-            "Nhi khoa",
-            "Da liễu",
-            "Thần kinh",
-            "Tim mạch",
-            "Tiêu hóa",
-            "Hô hấp",
-            "Nội tiết",
-            "Thận",
-            "Xương khớp"
-        );
+    public Doctor updateDoctor(Doctor updatedDoctor) {
+        Doctor existingDoctor = doctorRepository.findById(updatedDoctor.getId())
+                .orElseThrow(() -> new RuntimeException("Không tìm thấy bác sĩ"));
+
+        // Chỉ cập nhật các trường có thể sửa (tránh update username/password)
+        existingDoctor.setFullName(updatedDoctor.getFullName());
+        existingDoctor.setUsername(updatedDoctor.getUsername());
+        existingDoctor.setEmail(updatedDoctor.getEmail());
+        existingDoctor.setPhoneNumber(updatedDoctor.getPhoneNumber());
+        existingDoctor.setDateOfBirth(updatedDoctor.getDateOfBirth());
+
+        if (updatedDoctor.getImage() != null ){
+            existingDoctor.setImage(updatedDoctor.getImage());
+        }
+        // Cập nhật mật khẩu nếu người dùng nhập mới (không rỗng và khác rỗng)
+        if (updatedDoctor.getPassword() != null && !updatedDoctor.getPassword().isEmpty()) {
+            String encodedPassword = passwordEncoder.encode(updatedDoctor.getPassword());
+            existingDoctor.setPassword(encodedPassword);
+        }
+        // Nếu không nhập mật khẩu mới thì giữ nguyên mật khẩu cũ
+
+        return doctorRepository.save(existingDoctor);
     }
 } 
