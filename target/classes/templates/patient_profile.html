@@ -3,6 +3,9 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Patient Profile</h1>
         </div>
+        <div class="alert alert-success" th:if="${success}">
+            Cập nhật thành công!
+        </div>
         <form th:action="@{/patient_profile/update}" method="post"  enctype="multipart/form-data" th:object="${patient}"  id="profileForm">
             <!-- Profile Picture -->
             <input type="hidden" th:field="*{id}" />

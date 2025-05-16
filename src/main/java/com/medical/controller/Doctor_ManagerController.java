@@ -1,11 +1,15 @@
 package com.medical.controller;
 
+import com.medical.model.Appointment;
+import com.medical.model.AppointmentStatus;
 import com.medical.model.Doctor;
 import com.medical.repository.DoctorRepository;
+import com.medical.service.AppointmentService;
 import com.medical.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -35,12 +39,8 @@ public class Doctor_ManagerController {
     @Autowired
     private DoctorService doctorService;
 
-    @GetMapping("/doctor_dashboard")
-    public String doctor_home(Model model) {
-        model.addAttribute("pageTitle", "Trang chủ bác sĩ");
-        model.addAttribute("contentPage", "doctor/doctor_dashboard");
-        return "doctor/doctor_manager";
-    }
+    @Autowired
+    private AppointmentService appointmentService;
 
     @GetMapping("/doctor_pro")
     public String doctor_pro(Model model) {
@@ -97,5 +97,45 @@ public class Doctor_ManagerController {
         }catch (Exception e){
             return "redirect:/doctor_pro";
         }
+    }
+
+    @GetMapping("/doctor_appointments")
+    public String doctor_appointments(Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Doctor doctor = (Doctor) auth.getPrincipal(); // ép kiểu sang Doctor
+        Long doctorId = doctor.getId(); // lấy ID từ entity
+
+        Doctor doctorInfo = doctorRepository.findById(doctorId).orElse(null);
+        model.addAttribute("doctor", doctorInfo); // không cần list
+
+        List<Appointment> appointmentByDoc = appointmentService.getAppointmentByDocId(doctorId);
+        model.addAttribute("appointmentByDoc", appointmentByDoc); // không cần list
+
+        model.addAttribute("pageTitle", "Lịch khám");
+        model.addAttribute("contentPage", "doctor/doctor_appointments");
+        return "doctor/doctor_manager";
+    }
+
+    @PostMapping("/update_status")
+    public String update_status(@RequestParam Long id,
+                                @RequestParam String status,
+                                RedirectAttributes redirectAttributes) {
+
+        Appointment appointment = appointmentService.getAppointmentById(id);
+        if (appointment != null) {
+            try {
+                // Chuyển từ String sang Enum
+                AppointmentStatus newStatus = AppointmentStatus.valueOf(status.toUpperCase());
+                appointment.setStatus(newStatus);
+
+                appointmentService.updateStatusAppointment(appointment);
+                redirectAttributes.addFlashAttribute("success", "Cập nhật trạng thái thành công!");
+            } catch (IllegalArgumentException e) {
+                redirectAttributes.addFlashAttribute("error", "Trạng thái không hợp lệ.");
+            }
+        } else {
+            redirectAttributes.addFlashAttribute("error", "Không tìm thấy cuộc hẹn.");
+        }
+        return "redirect:/doctor_appointments";
     }
 }

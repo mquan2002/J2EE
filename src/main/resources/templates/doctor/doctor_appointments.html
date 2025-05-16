@@ -1,0 +1,114 @@
+<th:block th:fragment="content">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+
+    </div>
+    <!-- Stats Cards -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Appointments</h5>
+                    <h2 class="card-text">12</h2>
+                    <a href="#" class="text-white">View details <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Total Patients</h5>
+                    <h2 class="card-text">245</h2>
+                    <a href="#" class="text-white">View details <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Pending Requests</h5>
+                    <h2 class="card-text">5</h2>
+                    <a href="#" class="text-white">View details <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Available Slots</h5>
+                    <h2 class="card-text">18</h2>
+                    <a href="#" class="text-white">View details <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Appointments -->
+    <div class="card mt-4">
+        <div class="card-header" >
+            <h5 class="mb-0">Recent Appointments</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Patient</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody th:each="appointmentByDoc : ${appointmentByDoc}">
+                    <tr >
+                        <td th:text="*{appointmentByDoc.id}"></td>
+                        <td th:text="*{appointmentByDoc.patient.fullName}"></td>
+                        <td th:text="*{appointmentByDoc.appointmentTime}"></td>
+                        <td><span class="badge bg-success" th:text="*{appointmentByDoc.status}"></span></td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-bs-toggle="modal"
+                                    th:attr="data-bs-target='#modal__' + ${appointmentByDoc.id}">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                    <!-- Modal (lặp theo từng appointment để tạo modal riêng biệt) -->
+                        <div th:each="appointmentByDoc   : ${appointmentByDoc}">
+                            <div class="modal fade" th:id="'modal__' + ${appointmentByDoc.id}" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form th:action="@{/update_status}" method="post">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Chi tiết cuộc hẹn</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input type="hidden" name="id" th:value="${appointmentByDoc.id}" />
+                                            <input type="hidden" name="status" value="COMPLETED" />
+
+
+                                            <p><strong>Tên bệnh nhân:</strong> <span th:text="${appointmentByDoc.patient.fullName}"></span></p>
+                                            <p><strong>Email:</strong> <span th:text="${appointmentByDoc.patient.email}"></span></p>
+                                            <p><strong>Ngày sinh:</strong> <span th:text="${#dates.format(appointmentByDoc.patient.dateOfBirth, 'dd/MM/yyyy')}"></span></p>
+                                            <p><strong>Giới tính:</strong> <span th:text="${appointmentByDoc.patient.gender}"></span></p>
+                                            <p><strong>Nhóm máu:</strong> <span th:text="${appointmentByDoc.patient.bloodGroup}"></span></p>
+                                            <p><strong>Triệu chứng:</strong> <span th:text="${appointmentByDoc.description}"></span></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" >Done</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </table>
+            </div>
+        </div>
+    </div>
+</th:block>>

@@ -2,7 +2,8 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Doctor Profile</h1>
     </div>
-        <form th:action="@{/doctor_pro/update}" method="post"  enctype="multipart/form-data" th:object="${doctor}"  id="profileForm">
+    <div class="alert alert-success" th:if="${success}" th:text="${success}"></div>
+    <form th:action="@{/doctor_pro/update}" method="post"  enctype="multipart/form-data" th:object="${doctor}"  id="profileForm">
             <!-- Profile Picture -->
             <input type="hidden" th:field="*{id}" />
             <div class="row mb-4">

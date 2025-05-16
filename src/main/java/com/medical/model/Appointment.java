@@ -37,6 +37,7 @@ public class Appointment {
     @Column(nullable = false)
     private AppointmentStatus status = AppointmentStatus.PENDING;
 
+
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 

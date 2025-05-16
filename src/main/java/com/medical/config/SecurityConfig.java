@@ -55,7 +55,7 @@ public class SecurityConfig {
                 .requestMatchers("/", "/home", "/about", "/contact", "/specialty","/doctor","/search/**").permitAll()
                 .requestMatchers("/css/**", "/js/**", "/img/**", "/images/**", "/uploads/**", "/webjars/**").permitAll()
                 .requestMatchers("/register/**", "/login", "/error").permitAll()
-                .requestMatchers("/doctor_manager/**","/profile/","/doctor_dashboard/").hasRole("DOCTOR")
+                .requestMatchers("/doctor_manager/**","/profile/","/doctor_appointments/").hasRole("DOCTOR")
                 .requestMatchers("/patient/**","/booking/**","/booking_success/**","/patient_profile/**").hasRole("PATIENT")
                 .anyRequest().authenticated()
             )
@@ -65,7 +65,7 @@ public class SecurityConfig {
                 .successHandler((request, response, authentication) -> {  // Thêm success handler tùy chỉnh
                     if (authentication.getAuthorities().stream()
                             .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_DOCTOR"))) {
-                        response.sendRedirect("/doctor_dashboard");
+                        response.sendRedirect("/doctor_appointments");
                     } else {
                         response.sendRedirect("/");
                     }
